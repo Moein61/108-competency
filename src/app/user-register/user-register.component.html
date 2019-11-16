@@ -1,0 +1,97 @@
+<h3>Register new user</h3>
+ 
+<div class="row">
+
+  <div class="form col col-6 offset-3">
+        <div class="form-group row">
+            <label for="userName" class="col-4 col-form-label">User Name: </label> 
+            <div class="col-8">
+                <input id="userName"  type="text" [(ngModel)]= "model.userName" name="userName" (ngModelChange)= "userValueChanged()" class="form-control">
+                <div *ngIf= "userNameError" class="alert alert-danger">
+                    User Name is required
+
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+                <label for="password" class="col-4 col-form-label">Password: </label> 
+                <div class="col-8">
+                    <input id="password"  type="password" [(ngModel)]="model.password" name="password" (ngModelChange)= "passwordChanged()" class="form-control">
+                    <div *ngIf= "passwordError" class="alert alert-danger">
+                            Password is required to be at least 6
+        
+                    </div>
+                </div>
+        </div>
+        <div class="form-group row">
+                <label for="retypePassword" class="col-4 col-form-label">Retype password: </label> 
+                <div class="col-8">
+                    <input id="retypePassword" type="password" [(ngModel)]= "retypePassword" name="retype" (ngModelChange)="passwordChanged()" class="form-control">
+                    <div *ngIf= "passMatchError" class="alert alert-danger">
+                            Passwords do not match 
+        
+                    </div>
+                </div>
+        </div>
+        <div class="form-group row">
+            <label for="email" class="col-4 col-form-label">Email: </label> 
+            <div class="col-8">
+                <input id="email"  type="text" [(ngModel)]= "model.email" name="email" (ngModelChange)= "emailChange()" class="form-control">
+                <div *ngIf= "emailError" class="alert alert-danger">
+                        email is required
+    
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+                <label for="fname" class="col-4 col-form-label">First Name: </label> 
+                <div class="col-8">
+                    <input id="fName"  type="text" [(ngModel)]="model.firstName" name="fName" class="form-control">
+                </div>
+        </div>
+        <div class="form-group row">
+                <label for="lname" class="col-4 col-form-label">Last Name: </label> 
+                <div class="col-8">
+                    <input id="lname"  type="text" [(ngModel)]="model.lastName" name="lName" class="form-control">
+                </div>
+        </div>
+        <div class="form-group row">
+                <label for="address" class="col-4 col-form-label">Address: </label> 
+                <div class="col-8">
+                    <input id="address"  type="text" [(ngModel)]="model.address" name="address" class="form-control">
+                </div>
+        </div>
+        <div class="form-group row">
+                <label for="phone" class="col-4 col-form-label">Phone: </label> 
+                <div class="col-8">
+                    <input id="phone"  type="text" [(ngModel)]="model.phone" name="phone" class="form-control">
+                </div>
+        </div>
+        <div class="form-group row">
+            
+            <div class="offset-4 col-8">
+            <button (click)="registerUser()" type= "button" class="btn btn-primary">Save User</button>
+        </div>
+    </div>
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- 
+    userName
+    password
+    first name
+    last name
+    email
+    adress
+    phone
+ -->
